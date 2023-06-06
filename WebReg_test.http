@@ -1,0 +1,91 @@
+POST https://ilroutreach--tiger.sandbox.my.salesforce.com/services/apexrest/WebReg
+Content-Type: application/json
+Authorization: OAuth {{$dotenv TOKEN}}
+
+{
+  "point_of_sale": "ILR Registrations : registrations.ilr.test",
+  "response_webhook_url": "http:\/\/registrations.ilr.test\/hooks\/v1\/salesforce-commerce",
+  "order_id": "5632",
+  "payments": [
+    {
+      "payment_type": "cardpointe_api",
+      "payment_id": "2605",
+      "amount": 1595,
+      "transaction_id": "145541759701",
+      "transaction_data": {
+        "CardIssuer": "visa",
+        "MaskedCardNumber": "1111",
+        "NameOnCard": "Sheb Wooley",
+        "AuthResponse": {
+          "FreewayResponse": {
+            "AuthorizationCode": "PPS088"
+          }
+        }
+      }
+    }
+  ],
+  "customer": {
+    "customer_profile_id": "3533",
+    "contact_sfid": null,
+    "email": "sheb_001@cornell.edu",
+    "first_name": "Sheb",
+    "middle_name": "",
+    "last_name": "Wooley",
+    "company": "Clunk Supply",
+    "address_line1": "123 Any St.",
+    "address_line2": "",
+    "city": "Ithaca",
+    "state": "NY",
+    "zip": "14850",
+    "country_code": "US",
+    "job_title": null,
+    "industry": null,
+    "phone": "555-2112",
+    "additional_fields": []
+  },
+  "payment_owner": "customer",
+  "order_total": 1595,
+  "order_items": [
+    {
+      "name": "Advanced Internal Investigations Practice",
+      "discounts": [],
+      "price": 1595,
+      "discounted_price": 1595,
+      "quantity": 1,
+      "total": 1595,
+      "discounted_total": 1595,
+      "product": {
+        "product_type": "registration",
+        "x_product_type_subtype": "class",
+        "additional_fields": [],
+        "course_id": "a0p0P00000DjUJCQA3",
+        "class_id": "a0i4U00000QeMiTQAV",
+        "participants": [
+          {
+            "participant_id": "7122",
+            "contact_sfid": null,
+            "email": "sheb@cornell.edu",
+            "first_name": "Sheb",
+            "middle_name": "",
+            "last_name": "Wooley",
+            "company": "Wilhelm, Inc",
+            "address_line1": "123 Any St.",
+            "address_line2": "",
+            "city": "Ithaca",
+            "state": "NY",
+            "zip": "14850",
+            "country_code": "US",
+            "job_title": null,
+            "industry": null,
+            "phone": null,
+            "dietary_restrictions": null,
+            "accessible_accommodation": null,
+            "is_cornell_employee": "false",
+            "apply_to_certificate": "",
+            "additional_fields": []
+          }
+        ]
+      }
+    }
+  ]
+}
